@@ -18,26 +18,6 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),z2)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := org.ifaa.android.manager
-LOCAL_MODULE_OWNER := zuk
-LOCAL_SRC_FILES := vendor/system/framework/org.ifaa.android.manager.jar
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE_SUFFIX := .jar
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dashd
-LOCAL_MODULE_OWNER := zuk
-LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT_SBIN)
-LOCAL_UNSTRIPPED_PATH := $(TARGET_ROOT_OUT_SBIN_UNSTRIPPED)
-LOCAL_SRC_FILES := vendor/system/rootfs/sbin/dashd
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-include $(BUILD_PREBUILT)
-
-
 ifeq ($(QCPATH),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libloc_api_v02
@@ -47,18 +27,6 @@ LOCAL_MULTILIB := 64
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_SUFFIX := .so
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libthermalclient
-LOCAL_MODULE_OWNER := zuk
-LOCAL_SRC_FILES_64 := vendor/system/vendor/lib64/libthermalclient.so
-LOCAL_SRC_FILES_32 := vendor/system/vendor/lib/libthermalclient.so
-LOCAL_MULTILIB := both
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -203,30 +171,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := colorservice
 LOCAL_MODULE_OWNER := zuk
 LOCAL_SRC_FILES := vendor/system/vendor/app/colorservice/colorservice.apk
-LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := ims
-LOCAL_MODULE_OWNER := zuk
-LOCAL_SRC_FILES := vendor/system/vendor/app/ims/ims.apk
-LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := imssettings
-LOCAL_MODULE_OWNER := zuk
-LOCAL_SRC_FILES := vendor/system/vendor/app/imssettings/imssettings.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
