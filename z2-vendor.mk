@@ -33,3 +33,5 @@ PRODUCT_PACKAGES += \
     qcrilhook
 
 $(call inherit-product, vendor/qcom/binaries/msm8996/graphics/graphics-vendor.mk)
+
+$(call inherit-product, vendor/zuk/z2/vendor/copyfiles.mk)
